@@ -12,11 +12,11 @@ public class HttpDownloader {
 	private URL url = null;
 
 	/**
-	 * 根据URL下载文件，前提是这个文件当中的内容是文本，函数的返回值就是文件当中的内容
-	 * 1.创建一个URL对象
-	 * 2.通过URL对象，创建一个HttpURLConnection对象
-	 * 3.得到InputStram
-	 * 4.从InputStream当中读取数据
+	 * use URLs to download files,and first ths file is a text file and the return of the fucntion is the content of the text file.
+	 * 1.create one URL object
+	 * 2.use the URL object to create the HttpURLConnection object.
+	 * 3.get InputStram object
+	 * 4.fetch the data frome the ImputSteam object.
 	 * @param urlStr
 	 * @return
 	 */
@@ -25,12 +25,12 @@ public class HttpDownloader {
 		String line = null;
 		BufferedReader buffer = null;
 		try {
-			// 创建一个URL对象
+			// create URL object
 			url = new URL(urlStr);
-			// 创建一个Http连接	
+			// create one http connection	
 			HttpURLConnection urlConn = (HttpURLConnection) url
 					.openConnection();
-			// 使用IO流读取数据
+			// read the data from io steam.
 			buffer = new BufferedReader(new InputStreamReader(urlConn
 					.getInputStream()));
 			while ((line = buffer.readLine()) != null) {
@@ -49,7 +49,7 @@ public class HttpDownloader {
 	}
 
 	/**
-	 * 该函数返回整形 -1：代表下载文件出错 0：代表下载文件成功 1：代表文件已经存在
+	 * thie return int  -1：error 0：success 1：the file is already exit
 	 */
 	public int downFile(String urlStr, String path, String fileName) {
 		InputStream inputStream = null;
@@ -79,7 +79,7 @@ public class HttpDownloader {
 	}
 
 	/**
-	 * 根据URL得到输入流
+	 * use the URL to get the IO stream.
 	 * 
 	 * @param urlStr
 	 * @return
