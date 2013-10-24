@@ -1,0 +1,17 @@
+public class DensityUtil {    
+    /**  
+     * Throght the phone 's desity , convert the dp to px;
+     */    
+    public static int dip2px(Context context, float dpValue) {    
+        final float scale = context.getResources().getDisplayMetrics().density;    
+        return (int) (dpValue * scale + 0.5f);    
+    }    
+    
+    /**  
+     * Through the phone 's desity , convert xp to dp
+     */    
+    public static int px2dip(Context context, float pxValue) {    
+        final float scale = context.getResources().getDisplayMetrics().density;    
+        return (int) (pxValue / scale + 0.5f);    
+    }    
+}  
